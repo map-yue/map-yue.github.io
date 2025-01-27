@@ -1191,57 +1191,6 @@ Generate music from the given lyrics segment by segment.
             </div>
         </div>
 
-        <script>
-            // 为所有歌词切换按钮添加事件监听
-            document.querySelectorAll('.lyrics-toggle').forEach(button => {
-                button.addEventListener('click', function() {
-                    // 找到当前按钮所在的播放器内的相关元素
-                    const musicPlayer = this.closest('.music-player');
-                    const lyricsContent = musicPlayer.querySelector('.lyrics-content');
-                    const chevron = musicPlayer.querySelector('.chevron');
-                    
-                    // 切换显示状态
-                    lyricsContent.classList.toggle('show');
-                    chevron.classList.toggle('up');
-                });
-            });
-    
-            // 更新指定播放器的内容
-            function updateMusicPlayer(playerIndex, title, descriptions, audioUrl, lyrics) {
-                // 获取指定索引的播放器
-                const players = document.querySelectorAll('.music-player');
-                if (playerIndex >= players.length) return;
-                
-                const player = players[playerIndex];
-                
-                // 更新内容
-                player.querySelector('.title').textContent = title;
-                
-                const descriptionsContainer = player.querySelector('.descriptions');
-                descriptionsContainer.innerHTML = '';
-                descriptions.forEach(desc => {
-                    const p = document.createElement('p');
-                    p.className = 'description';
-                    p.textContent = desc;
-                    descriptionsContainer.appendChild(p);
-                });
-                
-                const audio = player.querySelector('audio source');
-                audio.src = audioUrl;
-                audio.parentElement.load();
-                
-                player.querySelector('.lyrics-content').textContent = lyrics;
-            }
-    
-            // 使用示例：
-            // updateMusicPlayer(
-            //     0,  // 更新第一个播放器
-            //     "新的标题",
-            //     ["新的简介1", "新的简介2"],
-            //     "new-audio.mp3",
-            //     "新的歌词\n第二行"
-            // );
-        </script>
     <div class="section">
         <p style="font-size: 30px ;text-align: center; font-weight: bold">Modeling Diverse Languages</p>
         <div class="note">
@@ -1701,57 +1650,7 @@ I know y' all was waiting for this flow to come
                 </div>
             </div>
         </div>
-        <script>
-            // 为所有歌词切换按钮添加事件监听
-            document.querySelectorAll('.lyrics-toggle').forEach(button => {
-                button.addEventListener('click', function() {
-                    // 找到当前按钮所在的播放器内的相关元素
-                    const musicPlayer = this.closest('.music-player');
-                    const lyricsContent = musicPlayer.querySelector('.lyrics-content');
-                    const chevron = musicPlayer.querySelector('.chevron');
-                    
-                    // 切换显示状态
-                    lyricsContent.classList.toggle('show');
-                    chevron.classList.toggle('up');
-                });
-            });
-    
-            // 更新指定播放器的内容
-            function updateMusicPlayer(playerIndex, title, descriptions, audioUrl, lyrics) {
-                // 获取指定索引的播放器
-                const players = document.querySelectorAll('.music-player');
-                if (playerIndex >= players.length) return;
-                
-                const player = players[playerIndex];
-                
-                // 更新内容
-                player.querySelector('.title').textContent = title;
-                
-                const descriptionsContainer = player.querySelector('.descriptions');
-                descriptionsContainer.innerHTML = '';
-                descriptions.forEach(desc => {
-                    const p = document.createElement('p');
-                    p.className = 'description';
-                    p.textContent = desc;
-                    descriptionsContainer.appendChild(p);
-                });
-                
-                const audio = player.querySelector('audio source');
-                audio.src = audioUrl;
-                audio.parentElement.load();
-                
-                player.querySelector('.lyrics-content').textContent = lyrics;
-            }
-    
-            // 使用示例：
-            // updateMusicPlayer(
-            //     0,  // 更新第一个播放器
-            //     "新的标题",
-            //     ["新的简介1", "新的简介2"],
-            //     "new-audio.mp3",
-            //     "新的歌词\n第二行"
-            // );
-        </script>
+        
     <div class="section">
         <p style="font-size: 30px ;text-align: center; font-weight: bold">Emergent Spontaneous Performance & Advanced Vocal Techniques </p>
         <div class="note">
