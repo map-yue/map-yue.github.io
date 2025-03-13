@@ -177,16 +177,20 @@ layout: default
             <div class="column is-four-fifths">
                 <h2 style="text-align: center" class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
-                    <p>We tackle the task of generating whole-song music audio from given lyrics, dubbed lyrics2song. 
-While text-conditioned music generation models have produced high-quality results on short clips of non-vocal music, generating minutes-long full songs with both vocal and accompaniment parts remains a challenging problem, and we only see some satisfactory results from several close-sourced commercial systems. 
-The challenge of lyrics2song mainly lies in 1) the long context nature of music 2) the complexity of the music signal compared to others (speech, audio effects) 3) the distorted linguistic content and 4) lack of parallel data (lyrics-audio pairs).
-In this paper, we propose YuE, a series of open foundation language models for lyrics2song, incorporated into the llama family. 
-We demonstrate that our method can model up to 5 minutes length of music audio, follow lyrics condition throughout the whole song, maintain coherent musical structure, generate catchy vocal melodies and appropriate accompaniment.
-We develop several techniques to achieve this:
-1) we apply a semantically enhanced audio tokenizer to reduce the training cost and accelerate the convergence
-2) we propose a dual-token technique to enable track-synced vocal-instrumental modeling without modifying the llama decoder-only architecture, enjoying the established infrastructure for scaling and serving
-3) we introduce lyrics-chain-of-thoughts to allow the model progressively generate the whole song in a single context following lyrics condition
-4) a 3-stage training scheme is proposed to ensure better scalability, musicality, and lyrics controllability.</p>
+                    <p>We tackle the task of long-form music generation—particularly the challenging lyrics-to-song
+problem—by introducing YuE (乐), a family of open foundation models based on the LLaMA2
+architecture. Specifically, YuE scales to trillions of tokens and generates up to five minutes of
+music while maintaining lyrical alignment, coherent musical structure, and engaging vocal
+melodies with appropriate accompaniment. It achieves this through: (1) track-decoupled nexttoken prediction to overcome dense mixture signals, (2) structural progressive conditioning
+for long-context lyrical alignment, and (3) a multitask, multiphase pre-training recipe to
+converge and generalize. In addition, we redesign the in-context learning technique for
+music generation, enabling versatile style transfer (e.g., converting Japanese city pop into
+an English rap while preserving the original accompaniment) and bidirectional generation.
+Through extensive evaluation, we demonstrate that YuE matches or even surpasses some of
+the proprietary systems in musicality and vocal agility. In addition, fine-tuning YuE enables
+additional controls and enhanced support for tail languages. Furthermore, beyond generation,
+we show that YuE’s learned representations can perform well on music understanding tasks,
+where the results of YuE match or exceed state-of-the-art methods on the MARBLE benchmark.</p>
                     <!-- Video insertion starts here -->
                     <div class="columns is-centered has-text-centered">
 			 <img src="Yue-main.png">
